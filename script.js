@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         LinkedIn: ["http://www.linkedin.com/in/starphenom"],
         LeetCode: ["https://leetcode.com/u/STARPHENOM/"],
         Twitter: ["https://x.com/phenomkanishk"],
-        Telegram: ["https://t.me/starphenom1"],
+        Telegram: ["https://t.me/starphenom1","https://t.me/star_phenom"],
         Discord: ["https://discord.gg/4txukxFV"],
         Services: ["www.google.com"]
     };
@@ -85,6 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add blur effect to background
             document.querySelector(".header").classList.add("blur");
             document.querySelector(".social-icons").classList.add("blur");
+            icon.addEventListener("mouseleave", (event) => {
+                if (!popup.contains(event.relatedTarget)) {
+                    popup.style.display = "none";
+                    popup.classList.remove("move-to-center");
+                    document.querySelector(".header").classList.remove("blur");
+                    document.querySelector(".social-icons").classList.remove("blur");
+                }
+            });
         });
     });
     
